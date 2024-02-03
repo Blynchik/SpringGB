@@ -1,7 +1,5 @@
 package ru.gb.tasks.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.gb.tasks.model.Status;
 import ru.gb.tasks.model.Task;
 

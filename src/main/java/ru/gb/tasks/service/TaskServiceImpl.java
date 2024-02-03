@@ -4,6 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.gb.tasks.model.Performer;
 import ru.gb.tasks.model.Status;
 import ru.gb.tasks.model.Task;
 import ru.gb.tasks.repo.TaskRepo;
@@ -47,11 +48,15 @@ public class TaskServiceImpl implements TaskService {
         taskRepo.delete(toDelete);
     }
 
+    public Task findById(Long id) {
+        return taskRepo.findById(id).orElseThrow(
+                EntityNotFoundException::new
+        );
+    }
 
     public List<Task> findAll() {
         return taskRepo.findAll();
     }
-
 
     public List<Task> findByStatus(Status status) {
         return taskRepo.findByStatus(status);
