@@ -15,6 +15,7 @@ public class Converter {
         dto.setName(performer.getName());
         dto.setTasksId(performer.getTasks().stream()
                 .map(Task::getId).toList());
+        dto.setRoles(performer.getRoles());
         return dto;
     }
 

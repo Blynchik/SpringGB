@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.gb.tasks.model.Performer;
+import ru.gb.tasks.model.Role;
 import ru.gb.tasks.model.Task;
 import ru.gb.tasks.repo.PerformerRepo;
 
@@ -29,12 +30,20 @@ public class PerformerService {
         );
     }
 
+    public Performer findByName(String name) {
+        return performerRepo.findByName(name).orElseThrow(
+                EntityNotFoundException::new
+        );
+    }
+
     public List<Performer> findAll() {
         return performerRepo.findAll();
     }
 
     @Transactional
     public Performer create(Performer performer) {
+        performer.getRoles().add(Role.USER);
+//        performer.getRoles().add(Role.ADMIN);
         return performerRepo.save(performer);
     }
 
