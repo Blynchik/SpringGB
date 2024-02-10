@@ -1,0 +1,2 @@
+Пользователь использует метод Performer ru.gb.tasks.service.PerformerService.findByName(String)
+Пользователь использует метод List ru.gb.tasks.service.PerformerService.findAll()

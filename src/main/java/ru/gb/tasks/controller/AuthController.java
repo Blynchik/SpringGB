@@ -3,6 +3,7 @@ package ru.gb.tasks.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.gb.tasks.aspect.TrackUserAction;
 
 @RestController
 public class AuthController {
