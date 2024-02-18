@@ -43,4 +43,7 @@ public class Performer {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private Set<Role> roles;
+
+    @OneToOne(mappedBy = "performer")
+    private Session session;
 }
